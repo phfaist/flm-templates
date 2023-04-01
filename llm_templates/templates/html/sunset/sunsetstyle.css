@@ -23,16 +23,21 @@ body {
     background: linear-gradient(150deg, rgb(2, 0, 33) 0%, rgb(16, 4, 27) 32%, rgb(20, 12, 0) 100%);
     color: #d2c8c5;
 
+    padding-top: 8px;
     padding-bottom: 2rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 header, article {
-    max-width: 900px;
+    max-width: {{ page_width }};
     margin: 0px auto;
 }
 header {
-    margin: 5px auto 2rem;
+    margin: 0px auto 2rem;
     width: 100%;
+    box-sizing: border-box;
     padding: 1.5rem 2.5rem;
 
     color: #eaccc3;

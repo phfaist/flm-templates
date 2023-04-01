@@ -1,0 +1,78 @@
+
+@import url('https://fonts.cdnfonts.com/css/tex-gyre-schola');
+
+html, body {
+    font-family: 'TeXGyreSchola', serif;
+    font-size: 17px;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+    
+    font-weight: normal;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /* Photo by <a href="https://unsplash.com/@kiwihug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kiwihug</a> on <a href="https://unsplash.com/backgrounds/art/paper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+
+    background-image: url({{ 'html/oldtextbook/paper-bg.jpg' | embed_dataurl }});
+    background-repeat: repeat;
+
+    color: black;
+
+    padding-top: {{ margintop }};
+}
+
+
+
+header, article {
+    max-width: {{ page_width }};
+    margin: 0px auto;
+}
+header {
+    margin: 0px auto 0px;
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+
+    /*border: solid 2px black;*/
+}
+header > h1:first-child {
+    margin-top: 0px;
+}
+header div[role="doc-subtitle"] {
+  margin-left: 2em;
+  margin-top: 0.5em;
+  font-size: 1.1rem;
+  /*font-style: italic;*/
+}
+
+.header-flourish {
+    width: 100%;
+    max-width: 600px;
+    margin: 0px auto 2rem auto;
+}
+.header-flourish > svg {
+    width: 50%;
+}
+
+.defterm {
+    font-style: normal;
+}
+
+/* Adjust some values set in default html fragment renderer's CSS */
+
+a, a:link, a:hover, a:active, a:visited {
+  color: #843e0b;
+}
+.citation {
+  display: inline;
+  font-size: 100%;
+  vertical-align: 0px;
+  margin-top: 0px;
+}
+dl.citation-list > dt, dl.footnote-list > dt {
+  font-size: 100%;
+  display: inline-block;
+  margin-top: 0px;
+}
