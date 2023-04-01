@@ -6,6 +6,7 @@ authors = ["Philippe Faist"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "llm_templates"}]
+include = ["llm_templates/templates/**/*"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
