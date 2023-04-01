@@ -1,0 +1,9 @@
+template_engine: 'llm_templates.Jinja2Template'
+template_engine_config:
+  template_main_name: 'html/sunset/main.html'
+
+default_config:
+
+  metadata:
+    title: 'LLM Document'
+

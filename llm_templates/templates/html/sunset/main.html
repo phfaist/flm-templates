@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>{{ metadata.title }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style type="text/css">
+{{ style.css_global | safe }}
+{{ style.css_content | safe }}
+{{ style.extra_css | safe }}
+{% include 'html/sunset/sunsetstyle.css' %}
+    </style>
+    <script type="text/javascript">
+{{ style.js | safe }}
+{{ style.extra_js | safe }}
+    </script>
+  </head>
+  <body>
+
+    {% if metadata.title %}
+      <header>
+        <h1 class="header-title">{{ metadata.title }}</h1>
+        {% if metadata.author %}
+        <div role="doc-subtitle" class="header-author">{{ metadata.author }}</div>
+        {% endif %}
+        {% if metadata.date %}
+        <div role="doc-subtitle" class="header-date">{{ metadata.date }}</div>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <article>
+      {{ content | safe }}
+    </article>
+
+    {% if style.body_end_js_scripts %}
+      {{ style.body_end_js_scripts | safe }}
+    {% endif %}
+
+  </body>
+</html>

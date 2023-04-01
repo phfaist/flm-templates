@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "llm-templates"
+version = "0.1.0"
+description = "Better templates for LLM output, especially for HTML"
+authors = ["Philippe Faist"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "llm_templates"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Jinja2 = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
