@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "llm-templates"
-version = "0.1.1"
+version = "0.1.2"
 description = "Better templates for LLM output, especially for HTML"
 authors = ["Philippe Faist"]
 license = "MIT"
