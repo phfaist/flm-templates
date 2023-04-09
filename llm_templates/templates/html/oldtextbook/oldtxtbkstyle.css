@@ -76,3 +76,10 @@ dl.citation-list > dt, dl.footnote-list > dt {
   display: inline-block;
   margin-top: 0px;
 }
+
+
+
+
+figure.float {
+    border: none 0px;
+}
