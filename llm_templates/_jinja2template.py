@@ -8,7 +8,7 @@ import jinja2
 
 class Jinja2Template:
 
-    def __init__(self, template_info_path, template_info_file, llm_run_info,
+    def __init__(self, template_info_path, template_info_file, flm_run_info,
                  *, template_main_name):
         super().__init__()
 

@@ -1,11 +1,11 @@
-template_engine: 'llm_templates.Jinja2Template'
+template_engine: 'flm_templates.Jinja2Template'
 template_engine_config:
   template_main_name: 'html/oldtextbook/main_old_textbook.html'
 
 default_config:
 
   metadata:
-    title: 'LLM Document'
+    title: 'FLM Document'
 
   page_width: '600px'
   margintop: '5px'

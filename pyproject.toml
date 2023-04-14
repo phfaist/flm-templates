@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "llm-templates"
+name = "flm-templates"
 version = "0.1.2"
 description = "Better templates for LLM output, especially for HTML"
 authors = ["Philippe Faist"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "llm_templates"}]
-include = ["llm_templates/templates/**/*"]
+packages = [{include = "flm_templates"}]
+include = ["flm_templates/templates/**/*"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

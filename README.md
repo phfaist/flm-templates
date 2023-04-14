@@ -2,7 +2,7 @@
 
 Install using:
 ```
-> pip install git+https://github.com/phfaist/llm-templates
+> pip install git+https://github.com/phfaist/flm-templates
 ```
 
 This LLM extension package provides a few more elaborate HTML templates.
