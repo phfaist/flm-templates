@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+html, body {
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    line-height: 1.65;
+    /*letter-spacing: 0.1px;*/
+    
+    font-weight: normal;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    --main-text-color: black;
+    --main-background-color: white;
+    --link-color: rgb(0,50,180);
+    --code-bg-color: rgba(127,127,127,0.25);
+
+    --page-margin-left: 200px;
+}
+
+
+body {
+    color: var(--main-text-color);
+
+    padding-top: {{ margintop }};
+}
+
+
+header, article {
+    max-width: {{ page_width }};
+    margin: 0px auto 0px var(--page-margin-left);
+}
+header {
+    margin: 0px auto 0px var(--page-margin-left);
+    padding-bottom: 1rem;
+    border-bottom: solid 2pt var(--main-text-color);
+    margin-bottom: 1rem;
+}
+header > h1:first-child {
+    margin-top: 0px;
+}
+header div[role="doc-subtitle"] {
+  margin-left: 2em;
+  margin-top: 0.5em;
+  font-size: 1.1rem;
+  /*font-style: italic;*/
+}
+
+/* Styling of the general document contents */
+
+h1 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.defterm {
+    font-style: normal;
+}
+
+/* Adjust some values set in default html fragment renderer's CSS */
+
+a, a:link, a:hover, a:active, a:visited {
+    color: var(--link-color);
+}
+.citation {
+    display: inline;
+    font-size: 100%;
+    vertical-align: 0px;
+    margin-top: 0px;
+}
+dl.citation-list > dt, dl.footnote-list > dt {
+    font-size: 100%;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+
+/* Styling of flm-documentation-specific css classes */
+
+.flm_doc_arg_name {
+    color: rgba(80,130,80,0.95);
+    font-style: italic;
+    font-weight: normal;
+}
+
+.verbatimcode {
+    background-color: var(--code-bg-color);
+    border-radius: 2px;
+    padding: 1px 2px;
+}
+.flm_doc_full_thing_call {
+    background-color: rgba(50,50,180,0.15);
+    border-radius: 2px;
+    padding: 3px;
+    border: solid 0.5pt rgba(50,50,180,0.35);
+}
+.flm_doc_arg_list_item_label {
+    background-color: rgba(80,130,80,0.15);
+    border-radius: 2px;
+    padding: 3px;
+}
+.flm_doc_full_thing_call .verbatimcode,
+.flm_doc_arg_list_item_label .verbatimcode {
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 0px;
+}
+.flm_doc_arguments_caption {
+    display: none;
+}
+
+/*.flm_doc_arguments > dl > dt {
+    display: none;
+}
+.flm_doc_arguments > dl > dd {
+}
+.flm_doc_arguments > dl > dd > .flm_doc_arg_list_item {
+    margin-left: -15px;
+}*/
+
+
+
+#toc {
+    position: fixed;
+    top: 20px;
+    left: 5px;
+    width: 180px;
+    max-height: calc(100vh - 40px);
+    overflow: auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px;
+
+    font-size: 0.8rem;
+
+    box-shadow: 10px 10px 20px rgba(127,127,127,0.3);
+}
+#toc .toc-caption {
+    font-weight: bold;
+    display: block;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+#toc > ul {
+    padding-left: 10px;
+}
+#toc > ul > li {
+    margin-bottom: 3px;
+    cursor: pointer;
+    color: var(--link-color);
+}
+
+@media screen and (max-width: 650px) {
+    html {
+        --page-margin-left: 0px;
+    }
+
+    #toc {
+        position: static;
+        width: calc(100% - 50px);
+        max-width: calc(100% - 50px);
+        max-height: inherit;
+
+        margin: 1rem auto;
+    }
+}

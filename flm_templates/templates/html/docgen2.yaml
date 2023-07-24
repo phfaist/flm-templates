@@ -1,0 +1,13 @@
+template_engine: 'flm_templates.Jinja2Template'
+template_engine_config:
+  template_main_name: 'html/docgen2/main.html'
+
+default_config:
+
+  metadata:
+    title: 'Documentation of an FLM Environment'
+
+
+  page_width: '750px'
+
+  margintop: '5px'
