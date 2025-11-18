@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>{{ metadata.title }}</title>
+    <title>{{ metadata.title | flmrendertext }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style type="text/css">
@@ -20,12 +20,12 @@
 
     {% if metadata.title %}
       <header>
-        <h1 class="header-title">{{ metadata.title }}</h1>
+        <h1 class="header-title">{{ metadata.title | flmrender }}</h1>
         {% if metadata.author %}
-        <div role="doc-subtitle" class="header-author">{{ metadata.author }}</div>
+        <div role="doc-subtitle" class="header-author">{{ metadata.author | flmrender }}</div>
         {% endif %}
         {% if metadata.date %}
-        <div role="doc-subtitle" class="header-date">{{ metadata.date }}</div>
+        <div role="doc-subtitle" class="header-date">{{ metadata.date | flmrender }}</div>
         {% endif %}
       </header>
     {% endif %}

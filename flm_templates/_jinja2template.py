@@ -3,26 +3,32 @@ import base64
 import mimetypes
 
 import jinja2
+from markupsafe import Markup
+
+from flm.main.template import TemplateEngineBase
 
 
+# TODO/FIXME: support for some type of flmrender() filter (maybe
+# {% flmrender %}...{% endflmrender %} ??
+#
+# exposed by self.document_template.flm_render_standalone()
 
-class Jinja2Template:
+class Jinja2Template(TemplateEngineBase):
 
-    def __init__(self, template_info_path, template_info_file, flm_run_info,
-                 *, template_main_name):
-        super().__init__()
+    def initialize(self, template_main_name):
 
-        self.template_info_path = template_info_path # base folder
-        self.template_info_file = template_info_file # the .yaml file
         self.template_main_name = template_main_name
 
         # load the main template 
         self.jinja2_env = jinja2.Environment(
-            loader=jinja2.FileSystemLoader(template_info_path),
+            loader=jinja2.FileSystemLoader(self.template_info_path),
             autoescape=jinja2.select_autoescape()
         )
 
         self.jinja2_env.filters["embed_dataurl"] = self.jfilter_embed_dataurl
+
+        self.jinja2_env.filters["flmrender"] = self.jfilter_flmrender
+        self.jinja2_env.filters["flmrendertext"] = self.jfilter_flmrendertext
 
         self.main_template = self.jinja2_env.get_template(self.template_main_name)
 
@@ -39,6 +45,11 @@ class Jinja2Template:
 
         return f'data:{mime_type};base64,{base64.b64encode(f_data).decode("ascii")}'
 
+    def jfilter_flmrender(self, value):
+        return Markup(self.document_template.flm_render_standalone(value))
+
+    def jfilter_flmrendertext(self, value):
+        return self.document_template.flm_render_standalone_text(value)
 
     def render_template(self, config, **kwargs):
         
