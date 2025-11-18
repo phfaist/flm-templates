@@ -9,7 +9,7 @@ packages = [{include = "flm_templates"}]
 include = ["flm_templates/templates/**/*"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 Jinja2 = "^3.1.2"
 flm-core = ">=0.3.0a26"
 
